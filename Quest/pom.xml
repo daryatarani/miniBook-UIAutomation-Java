@@ -20,34 +20,7 @@
         <report.path>Reports/ExecutionReport</report.path>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.tfa</groupId>
-            <artifactId>Framework</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.tfa</groupId>
-            <artifactId>ReusableComponent</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.tfa</groupId>
-            <artifactId>CSM</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>test-jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.tfa</groupId>
-            <artifactId>Alfa</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>test-jar</type>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
