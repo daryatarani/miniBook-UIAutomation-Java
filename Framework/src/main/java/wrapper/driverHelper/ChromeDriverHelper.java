@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
-import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,9 +41,6 @@ public class ChromeDriverHelper
         return SetupChromeDriver("Samsung Galaxy S20");
     }
 
-    public WebDriver CreateChromeIPhone12ProDriver(){ return SetupChromeDriver("iPhone 12 Pro"); }
-
-    public WebDriver CreateChromeIPadProDriver(){ return SetupChromeDriver("iPad Pro"); }
 
     private WebDriver SetupChromeDriver(String chromeType)
     {
@@ -68,20 +64,5 @@ public class ChromeDriverHelper
         chromeOption.setExperimentalOption("prefs", prefs);
         chromeOption.setPageLoadStrategy(PageLoadStrategy.EAGER);
         return new ChromeDriver(chromeOption);
-    }
-
-    @SneakyThrows
-    private Map<String, Object> MobileEmulation(TestConstants.MobileDevice deviceName)
-    {
-        Map<String, Object> deviceMetrics = new HashMap<>();
-        var resolution = CommonMethods.ReturnDeviceResolution(deviceName);
-        var resolutionArray = resolution.split(",");
-        deviceMetrics.put("width", Integer.valueOf(resolutionArray[0]));
-        deviceMetrics.put("height", Integer.valueOf(resolutionArray[1]));
-        deviceMetrics.put("pixelRatio", 3.0);
-        Map<String, Object> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceMetrics", deviceMetrics);
-        mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-        return mobileEmulation;
     }
 }
