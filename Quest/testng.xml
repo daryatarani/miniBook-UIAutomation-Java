@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--suppress CheckTagEmptyBody -->
+<suite name="All Test Suite"  parallel="methods" thread-count="32">
+    <test verbose="2" name="Quest-UI">
+          <parameter name="BrowserType" value="CHROME"></parameter>
+           <parameter name="Env" value="STG4"></parameter>
+           <classes>
+               <!--suppress CheckTagEmptyBody -->
+            <class name="Runners.Runner"></class>
+        </classes>
+    </test>
+</suite>
